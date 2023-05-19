@@ -1,0 +1,98 @@
+---
+import Logo from "../components/svg/Logo.astro";
+import Instagram from "../components/svg/Instagram.astro";
+import Facebook from "../components/svg/Facebook.astro";
+import Hus from "../components/svg/Hus.astro";
+import Mail from "../components/svg/Mail.astro";
+import Kontakt from "../components/Kontakt.astro";
+---
+
+<Kontakt />
+<footer>
+  <div class="info">
+    <div class="grid">
+      <div class="hide">
+        <a target="_blank" href="https://www.instagram.com/twin_dance_studio/"> <Instagram /></a>
+        <a target="_blank" href="https://www.facebook.com/Twindancestudio/"> <Facebook /></a>
+      </div>
+      <div>
+        <p class="p_bold">Vi er på sociale medier</p>
+        <p>@twin_dance_studio</p>
+      </div>
+    </div>
+    <div class="grid">
+      <div class="hide">
+        <Hus />
+      </div>
+      <div>
+        <p class="p_bold">Find os</p>
+        <a target="_blank" href="https://goo.gl/maps/2fVyhh5rYSxiQ1w26?coh=178573&entry=tt"><p>Kulturhuset Islands Brygge 18, 2300 København S</p></a>
+        <a target="_blank" href="https://goo.gl/maps/P4ZYDw2FKSJrK1yh9?coh=178573&entry=tt"><p>Ørestads Boulevard 75, 2300 København S</p></a>
+      </div>
+    </div>
+    <div class="grid">
+      <div class="hide">
+        <Mail />
+      </div>
+      <div>
+        <p class="p_bold">Kontakt os</p>
+        <p>Mail: info@twindancestudio.dk</p>
+      </div>
+    </div>
+  </div>
+  <div class="logo">
+    <a href="../"> <Logo /></a>
+    <a href="../"> <img src="/img/5element2.webp" alt="Twin Dance" /></a>
+  </div>
+</footer>
+
+<style>
+  footer {
+    padding: 1.5rem;
+    background-color: var(--primary2);
+  }
+  img {
+    width: 100px;
+  }
+  .logo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  div {
+    padding-bottom: 1.5rem;
+    padding-top: 0.5rem;
+  }
+  p {
+    padding-bottom: 0.5rem;
+  }
+  .hide {
+    display: none;
+  }
+  a p {
+    text-decoration: underline;
+  }
+
+  @media (min-width: 900px) {
+    footer {
+      padding: 3rem;
+    }
+    img {
+      width: 150px;
+    }
+    .info {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: 60px auto;
+    }
+    div {
+      padding-top: 0;
+    }
+    .hide {
+      display: block;
+    }
+  }
+</style>

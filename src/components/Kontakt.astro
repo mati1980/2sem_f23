@@ -1,0 +1,55 @@
+---
+import Button from "../components/Button.astro";
+---
+
+<div class="kontakt">
+  <div class="fyld">
+    <h2>Har du spørgsmål?</h2>
+    <h1>Er du altid velkommen til at kontakte os.</h1>
+    <a class="knap" href="../praktisk">
+      <Button variant="mørk" size="stor">Kontakt os</Button>
+    </a>
+  </div>
+</div>
+
+<style>
+  .kontakt {
+    background-image: url("/img/mobil_gradient.webp");
+    height: 420px;
+  }
+  .fyld {
+    padding: 1.5rem;
+    padding-top: 10%;
+    display: grid;
+  }
+  .knap {
+    margin: auto;
+    padding-top: 3rem;
+  }
+  @media (min-width: 600px) {
+    .kontakt {
+      background-image: url("/img/gradient.webp");
+      height: 500px;
+    }
+  }
+
+  @media (min-width: 900px) {
+    .kontakt {
+      height: 700px;
+    }
+    .knap {
+      padding-top: 4rem;
+    }
+    .fyld {
+      padding: 3rem;
+      padding-top: 14%;
+    }
+  }
+  h2 {
+    color: var(--secondary2);
+    padding-bottom: 2rem;
+  }
+  h1 {
+    color: var(--secondary5);
+  }
+</style>

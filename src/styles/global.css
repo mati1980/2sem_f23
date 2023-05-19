@@ -1,0 +1,126 @@
+:root {
+  /* Farver */
+  --primary1: #230d24;
+  --primary2: #e4cfe5;
+  --primary3: #e83b3d;
+  --secondary1: #4a344c;
+  --secondary2: #ffdad1;
+  --secondary3: #ffaca3;
+  --secondary4: #ec766a;
+  --secondary5: #fcf0ed;
+  --baggrund: #fffcfa;
+
+  /* Typografi */
+  --light: 300;
+  --regular: 400;
+  --medium: 500;
+  --bold: 700;
+  --black: 900;
+}
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "niveau grotesk", sans-serif;
+  background-color: var(--baggrund);
+  color: var(--pirmary1);
+}
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+body {
+  max-width: 2000px;
+  min-height: 100vh;
+  margin: auto;
+}
+
+/*Ved ikke helt om det skal være på den her måde endnu*/
+section {
+  max-width: 1300px;
+  margin: auto;
+}
+
+/* Typografi */
+h1 {
+  font-size: 40px;
+  font-weight: var(--bold);
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: var(--bold);
+}
+
+h3 {
+  font-size: 32px;
+  font-weight: var(--medium);
+}
+
+h4 {
+  font-size: 24px;
+  font-weight: var(--bold);
+}
+
+p {
+  font-size: 17px;
+  font-weight: var(--regular);
+}
+
+.p_bold {
+  font-size: 17px;
+  font-weight: var(--bold);
+}
+
+button {
+  font-size: 15px;
+  font-weight: var(--light);
+  font-family: "niveau grotesk", sans-serif;
+  text-transform: uppercase;
+}
+
+@media (min-width: 900px) {
+  h1 {
+    font-size: 64px;
+  }
+
+  h2 {
+    font-size: 40px;
+  }
+
+  p {
+    font-size: 24px;
+  }
+  .p_bold {
+    font-size: 24px;
+  }
+  button {
+    font-size: 20px;
+  }
+}
+
+.card_type {
+  font-size: 50px;
+  font-weight: var(--light);
+}
+
+.quote {
+  font-size: 96px;
+  font-weight: var(--light);
+  font-style: italic;
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary1);
+}
+
+li {
+  list-style-type: none;
+}

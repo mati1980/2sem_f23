@@ -1,0 +1,96 @@
+---
+import Logo from "../components/svg/Logo.astro";
+import Instagram from "../components/svg/Instagram.astro";
+import Facebook from "../components/svg/Facebook.astro";
+---
+
+<nav>
+  <a href="../"><Logo /></a>
+  <ul class="nav_menu">
+    <li><a href="../team">Twin Team</a></li>
+    <li><a href="../holdplan">Holdplan</a></li>
+    <li><a href="../praktisk">Praktisk</a></li>
+  </ul>
+  <div class="nav_icons">
+    <a target="_blank" href="https://www.instagram.com/twin_dance_studio/"> <Instagram /></a>
+    <a target="_blank" href="https://www.facebook.com/Twindancestudio/"> <Facebook /></a>
+  </div>
+  <div class="burger">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </div>
+</nav>
+<script src="../scripts/burger.js"></script>
+
+<style>
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+  }
+  li a {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    font-size: 20px;
+  }
+  .nav_icons a {
+    padding-left: 1rem;
+  }
+
+  .burger {
+    display: none;
+  }
+  .nav_menu {
+    display: flex;
+  }
+
+  /*BURGER*/
+  @media (max-width: 900px) {
+    .burger {
+      display: block;
+      cursor: pointer;
+    }
+    .bar {
+      display: block;
+      height: 3px;
+      width: 30px;
+      margin: 5px;
+      background-color: var(--primary1);
+      border-radius: 1px;
+    }
+
+    .burger.active .bar:nth-child(2) {
+      opacity: 0;
+    }
+    .burger.active .bar:nth-child(1) {
+      transform: translateY(8px) rotate(45deg);
+    }
+    .burger.active .bar:nth-child(3) {
+      transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .nav_menu {
+      display: flex;
+      position: fixed;
+      flex-direction: column;
+      background-color: var(--baggrund);
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      transition: 0.3s;
+      top: 0;
+      left: 100%;
+      padding-top: 5rem;
+    }
+    .nav_menu.active {
+      top: 0;
+      left: 0;
+    }
+    .nav_icons {
+      margin-left: auto;
+      padding-right: 1rem;
+    }
+  }
+</style>
