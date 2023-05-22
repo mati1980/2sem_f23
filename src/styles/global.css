@@ -43,8 +43,15 @@ body {
 
 /*Ved ikke helt om det skal være på den her måde endnu*/
 section {
-  max-width: 1300px;
-  margin: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+@media (min-width: 900px) {
+  section {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
 }
 
 /* Typografi */

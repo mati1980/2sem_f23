@@ -1,0 +1,48 @@
+---
+import Button from "../components/Button.astro";
+---
+
+<div class="grid_1-1">
+  <div class="info">
+    <h2>Din danseskole på Islands Brygge & i Ørestaden</h2>
+    <p>Vi tilbyder dansehold til alle aldre!</p>
+    <p>Hver tirsdag og onsdag på Islands Brygge</p>
+    <p>Hver mandag i Ørestaden</p>
+    <p>Mini mix til de mindste</p>
+    <p>Disco, showdance, moderne, girly, hip hop, performance og formation</p>
+    <p>Vi glæder os til at byde jer velkommen til TWIN Dance Studio danseunivers.</p>
+    <a class="knap" href="../praktisk">
+      <Button variant="lys" size="lille">Læs mere om skolen</Button>
+    </a>
+  </div>
+  <img src="/img/5element2.webp" alt="danseskole" />
+</div>
+
+<style>
+  img {
+    width: 90%;
+    margin: auto;
+  }
+  .grid_1-1 {
+    margin-top: 2rem;
+  }
+
+  .info {
+    display: grid;
+  }
+
+  .knap {
+    margin: auto;
+  }
+
+  @media (min-width: 900px) {
+    .grid_1-1 {
+      display: grid;
+      grid-template-columns: 60% 40%;
+    }
+    img {
+      margin: 0;
+      margin-left: auto;
+    }
+  }
+</style>
