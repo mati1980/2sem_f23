@@ -1,6 +1,7 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
 import Hold from "../components/Hold.astro";
+
 import Button from "../components/Button.astro";
 
 const url = "https://tfziumiybrtkqeivmchz.supabase.co/rest/v1/hold";
@@ -16,10 +17,10 @@ const data = await response.json();
 
 console.log(data);
 
-const islandMandag = data.filter((hold) => hold.sted == "Islands Brygge" && hold.dag == "Onsdag");
-const islandTorsdag = data.filter((hold) => hold.sted == "Islands Brygge" && hold.dag == "Torsdag");
+const islandMandag = data.filter((holdnavn) => holdnavn.sted);
+const islandTorsdag = data.filter((holdnavn) => holdnavn.sted == "Islands Brygge" && holdnavn.dag == "Torsdag");
 
-const orestad = data.filter((holdnavn) => holdnavn.sted);
+
 ---
 
 <MainLayout title="Twin Dance Studio">
@@ -29,7 +30,10 @@ const orestad = data.filter((holdnavn) => holdnavn.sted);
   <Button variant="mørk" size="lille">Islands Brygge</Button>
   <Button variant="mørk" size="lille">Ørestaden</Button>
 
-  <Hold indhold={islandMandag} />
+  <div>
+  <Hold indhold={islandMandag} sted="Islands brygge"/>
+</div>
+
   <Hold indhold={islandTorsdag} />
-  <Hold indhold={orestad} />
+
 </MainLayout>
