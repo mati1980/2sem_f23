@@ -1,0 +1,31 @@
+---
+---
+
+<div class="grid_1-1">
+  <div class="container_l">
+    <h2>Sommercamp</h2>
+    <p>Tilmeld dig nu på mail:</p>
+    <p>info@twindancestudio.dk</p>
+  </div>
+  <div class="container_r"></div>
+</div>
+
+<style>
+  .container_l {
+    background-color: var(--secondary5);
+    padding-left: 1.5rem;
+  }
+  .container_r {
+    background-color: var(--primary2);
+  }
+  @media (min-width: 900px) {
+    .container_l {
+      padding-left: 3rem;
+    }
+    .grid_1-1 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      height: 200px;
+    }
+  }
+</style>

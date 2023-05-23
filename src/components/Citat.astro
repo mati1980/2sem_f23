@@ -1,0 +1,35 @@
+---
+import Button from "../components/Button.astro";
+---
+
+<div class="container">
+  <p class="citat">"For os er dans også sammenhold og udvikling."</p>
+  <a class="knap" href="../team">
+    <Button variant="mørk" size="lille">Mød vores team</Button>
+  </a>
+</div>
+
+<style>
+  .container {
+    background-color: var(--primary3);
+    display: grid;
+  }
+  .citat {
+    margin-inline: 10%;
+    padding: 2rem;
+  }
+  .knap {
+    margin: auto;
+    padding-bottom: 2rem;
+  }
+  @media (min-width: 900px) {
+    .knap {
+      margin-left: 60%;
+      padding-bottom: 5rem;
+    }
+    .citat {
+      padding-bottom: 0;
+      padding-top: 4rem;
+    }
+  }
+</style>

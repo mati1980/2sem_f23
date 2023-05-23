@@ -1,0 +1,23 @@
+---
+import Button from "../components/Button.astro";
+import Holdarticle from "../components/Holdarticle.astro";
+const { indhold, sted, dag } = Astro.props;
+---
+
+<h2>{sted}</h2>
+<h2>{dag}</h2>
+<section>
+  {indhold.map((hold) => <Holdarticle holdnavn={hold.holdnavn} alder={hold.alder} undervisere={hold.undervisere} tidspunkt={hold.tidspunkt} sted={hold.sted} />)}
+</section>
+
+<style>
+  .container {
+    background-color: var(--secondary5);
+  }
+  .grid_1-1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    place-items: center;
+  }
+</style>

@@ -1,7 +1,35 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
+import Hold from "../components/Hold.astro";
+import Button from "../components/Button.astro";
+
+const url = "https://tfziumiybrtkqeivmchz.supabase.co/rest/v1/hold";
+
+const options = {
+  headers: {
+    apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRmeml1bWl5YnJ0a3FlaXZtY2h6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODQ3NzYzOTQsImV4cCI6MjAwMDM1MjM5NH0.C1YsVKVfEdX4uF2XrTLiHqU0V4pB-aEmurW0etJlT_o",
+  },
+};
+
+const response = await fetch(url, options);
+const data = await response.json();
+
+console.log(data);
+
+const islandMandag = data.filter((hold) => hold.sted == "Islands Brygge" && hold.dag == "Onsdag");
+const islandTorsdag = data.filter((hold) => hold.sted == "Islands Brygge" && hold.dag == "Torsdag");
+
+const orestad = data.filter((holdnavn) => holdnavn.sted);
 ---
 
 <MainLayout title="Twin Dance Studio">
-  <h1>Velkommen til Twin Dance Studio</h1>
+  <h2>Holdplan sæson 2022 / 2023</h2>
+  <p>Her ser du et overblik over alle de hold vi tilbyder på henholdsvis Islands Brygge og Ørestaden Danseskole. Du finder en beskrivelse af stilarterne nederst på siden.</p>
+  <p>Vælg dit favorit hold og tilmeld dig ved at klikke på holdet.</p>
+  <Button variant="mørk" size="lille">Islands Brygge</Button>
+  <Button variant="mørk" size="lille">Ørestaden</Button>
+
+  <Hold indhold={islandMandag} />
+  <Hold indhold={islandTorsdag} />
+  <Hold indhold={orestad} />
 </MainLayout>

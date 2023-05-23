@@ -92,6 +92,13 @@ button {
   text-transform: uppercase;
 }
 
+.citat {
+  font-size: 38px;
+  font-weight: var(--light);
+  font-style: italic;
+  color: var(--secondary3);
+}
+
 @media (min-width: 900px) {
   h1 {
     font-size: 64px;
@@ -110,17 +117,14 @@ button {
   button {
     font-size: 20px;
   }
+  .citat {
+    font-size: 96px;
+  }
 }
 
 .card_type {
   font-size: 50px;
   font-weight: var(--light);
-}
-
-.quote {
-  font-size: 96px;
-  font-weight: var(--light);
-  font-style: italic;
 }
 
 a {

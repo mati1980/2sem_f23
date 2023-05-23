@@ -1,0 +1,14 @@
+---
+import Button from "../components/Button.astro";
+const { holdnavn, alder, undervisere, tidspunkt } = Astro.props;
+---
+
+<article class="container">
+  <p class="hold">{holdnavn}</p>
+  <p class="alder">{alder}</p>
+  <p class="underviser">{undervisere}</p>
+  <p class="tidspunkt">{tidspunkt}</p>
+  <a class="knap" href="../praktisk">
+    <Button variant="mørk" size="lille">Tilmeld</Button>
+  </a>
+</article>

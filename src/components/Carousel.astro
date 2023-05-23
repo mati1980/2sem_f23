@@ -1,0 +1,97 @@
+---
+---
+
+<astro-carousel>
+  <astro-slide>
+    <!-- Indhold til slide 1 -->
+    <h2>blia 1</h2>
+  </astro-slide>
+  <astro-slide>
+    <!-- Indhold til slide 2 -->
+    <h2>blia 2</h2>
+  </astro-slide>
+  <astro-slide>
+    <!-- Indhold til slide 3 -->
+    <h2>blia 3</h2>
+  </astro-slide>
+  <astro-slide>
+    <!-- Indhold til slide 4 -->
+    <h2>blia 4</h2>
+  </astro-slide>
+  <astro-slide>
+    <!-- Indhold til slide 5 -->
+    <h2>blia 5</h2>
+  </astro-slide>
+  <astro-slide>
+    <!-- Indhold til slide 6 -->
+    <h2>blia 6</h2>
+  </astro-slide>
+
+  <script>
+    const slides = document.querySelectorAll("astro-slide");
+    let currentSlide = 0;
+
+    function showSlide(index) {
+      slides[currentSlide].removeAttribute("active");
+      slides[index].setAttribute("active", "");
+      currentSlide = index;
+    }
+
+    function nextSlide() {
+      const nextSlideIndex = (currentSlide + 1) % slides.length;
+      showSlide(nextSlideIndex);
+    }
+
+    function previousSlide() {
+      const prevSlideIndex = (currentSlide - 1 + slides.length) % slides.length;
+      showSlide(prevSlideIndex);
+    }
+
+    // Tjek skærmstørrelsen og tilpas visningen af slides
+    function handleScreenResize() {
+      if (window.innerWidth >= 768) {
+        // Desktop-visning (vis 3 slides ad gangen)
+        showSlide(currentSlide); // Opdaterer aktuelt vist slide ved størrelsesændring
+      } else {
+        // Mobil-visning (vis 1 slide ad gangen)
+        showSlide(0); // Vis altid det første slide på mobil
+      }
+    }
+
+    // Lyt efter ændringer i skærmstørrelsen
+    window.addEventListener("resize", handleScreenResize);
+
+    // Initialisér karrusellen
+    handleScreenResize();
+  </script>
+</astro-carousel>
+
+<style>
+  astro-carousel {
+    width: 100%;
+    height: 400px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  astro-slide {
+    width: 33.33%; /* Vis 3 slides på en gang på desktop */
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+  }
+
+  astro-slide[active] {
+    opacity: 1;
+  }
+
+  /* Styling til mobilvisning */
+  @media (max-width: 767px) {
+    astro-slide {
+      width: 100%; /* Vis 1 slide på mobil */
+    }
+  }
+</style>
