@@ -15,12 +15,12 @@ const options = {
 const response = await fetch(url, options);
 const data = await response.json();
 
-console.log(data);
+//console.log(data);
 
-const islandMandag = data.filter((holdnavn) => holdnavn.sted);
-const islandTorsdag = data.filter((holdnavn) => holdnavn.sted == "Islands Brygge" && holdnavn.dag == "Torsdag");
-
-
+//const islandMandag = data.filter((holdnavn) => holdnavn.sted);
+const islandOnsdag = data.filter((holdnavn) => holdnavn.sted == "Islands brygge" && holdnavn.dag == "Onsdag");
+const islandTorsdag = data.filter((holdnavn) => holdnavn.sted == "Islands brygge" && holdnavn.dag == "Torsdag");
+const orestaden = data.filter((holdnavn) => holdnavn.sted == "Ørestaden" && holdnavn.dag == "Mandag");
 ---
 
 <MainLayout title="Twin Dance Studio">
@@ -29,11 +29,7 @@ const islandTorsdag = data.filter((holdnavn) => holdnavn.sted == "Islands Brygge
   <p>Vælg dit favorit hold og tilmeld dig ved at klikke på holdet.</p>
   <Button variant="mørk" size="lille">Islands Brygge</Button>
   <Button variant="mørk" size="lille">Ørestaden</Button>
-
-  <div>
-  <Hold indhold={islandMandag} sted="Islands brygge"/>
-</div>
-
+  <Hold indhold={islandOnsdag} />
   <Hold indhold={islandTorsdag} />
-
+  <Hold indhold={orestaden} />
 </MainLayout>
