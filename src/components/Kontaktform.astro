@@ -1,0 +1,68 @@
+---
+import Button from "../components/Button.astro";
+---
+
+<div class="kontakt">
+  <h2>Kontakt</h2>
+  <p>Du er altid velkommen til at kontakte os!</p>
+  <form class="form">
+    <div class="text">
+      <label for="firstname">Fornavn</label>
+      <input type="text" id="firstname" name="firstname" />
+    </div>
+    <div class="text">
+      <label for="lastname">Efternavn</label>
+      <input type="text" id="lastname" name="lastname" />
+    </div>
+    <div class="text">
+      <label for="email">E-mail</label>
+      <input type="email" id="email" name="email" />
+    </div>
+    <div class="text">
+      <label for="tel">Tlf nummer</label>
+      <input type="tel" id="tel" name="tel" />
+    </div>
+
+    <label class="text">
+      Hvad kan vi hjælpe dig med?
+      <textarea placeholder="" name="besked" rows="5"></textarea>
+    </label>
+
+    <a class="knap" href="#"> <Button variant="lys" size="lille">Indsend</Button></a>
+  </form>
+</div>
+
+<style>
+  .form {
+    display: grid;
+    max-width: 500px;
+    margin: auto;
+    background-color: var(--secondary5);
+    padding: 1rem;
+    gap: 1rem;
+  }
+  .text {
+    display: grid;
+  }
+  input,
+  textarea {
+    background-color: var(--baggrund);
+    border: solid 1px var(--secondary2);
+    border-radius: 3px;
+    padding: 0.5rem;
+  }
+  label {
+    color: var(--secondary4);
+    font-family: "niveau grotesk", sans-serif;
+    font-size: 20px;
+    font-weight: var(--light);
+  }
+  .knap {
+    margin: auto;
+  }
+  @media (min-width: 900px) {
+    .form {
+      padding: 3rem;
+    }
+  }
+</style>

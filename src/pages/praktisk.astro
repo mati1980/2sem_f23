@@ -1,7 +1,52 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
+import Headerimg from "../components/Headerimg.astro";
+import Button from "../components/Button.astro";
+import Priskort from "../components/Priskort.astro";
+import Kontaktform from "../components/Kontaktform.astro";
+import Betingelser from "../components/Betingelser.astro";
 ---
 
 <MainLayout title="Twin Dance Studio">
-  <h1>Velkommen til Twin Dance Studio</h1>
+  <Headerimg />
+  <section>
+    <h1>Praktisk</h1>
+    <div class="genveje">
+      <a class="knap" href="../praktisk">
+        <Button variant="mørk" size="lille">Priser</Button>
+      </a>
+      <a class="knap" href="../praktisk">
+        <Button variant="mørk" size="lille">Kontakt</Button>
+      </a>
+      <a class="knap" href="../praktisk">
+        <Button variant="mørk" size="lille">Betingelser</Button>
+      </a>
+    </div>
+    <h2>Priser for sæson 2023/2024</h2>
+    <h3>En sæson for Islands Brygge består af 38 lektioner</h3>
+    <div class="grid_1-1">
+      <Priskort hold="Mini mix 3-4 år " varighed="30 min" prismåned="205 kr" prissæson="2250 kr" sæson="2025 kr" />
+      <Priskort hold="Hold til 5+ år" varighed="45 min" prismåned="295 kr" prissæson="3250 kr" sæson="2925 kr" />
+    </div>
+    <h3>En sæson for Ørestaden Danseskole består af 27 lektioner</h3>
+    <Priskort hold="Hold til 5+ år" varighed="45 min" prismåned="257 kr" prissæson="2309 kr" sæson="2078 kr" />
+    <h3>Prøvetime</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    <Kontaktform />
+    <Betingelser />
+  </section>
 </MainLayout>
+
+<style>
+  h1 {
+    color: var(--primary3);
+  }
+
+  @media (min-width: 900px) {
+    .grid_1-1 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+  }
+</style>

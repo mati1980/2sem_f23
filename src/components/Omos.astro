@@ -1,0 +1,42 @@
+---
+import Femteelement from "../components/svg/Femteelement.astro";
+---
+
+<section>
+  <div class="grid">
+    <div>
+      <h1>Om os</h1>
+      <p>TWIN Dance Studio ejes af <span>Katrine og Caroline Strubberg.</span></p>
+      <p>Vi er uddannet fra DDD De Danske Danseskoler. Vi har undervist på mange af landets største danseskoler i mange forskellige stilarter. Vi har undervist børn, unge og voksne i både solo, grupper og formationer i mere end 15 år.</p>
+      <p>Vi har danset hele vores liv, og turneret nationalt samt internationalt. For os er dans glæde, passion, sammenhold og udvikling. Vi glæder os til at byde jer velkommen til TWIN Dance Studio danseunivers.</p>
+    </div>
+    <div class="femte">
+      <Femteelement />
+    </div>
+  </div>
+</section>
+<style>
+  h1,
+  span {
+    color: var(--primary3);
+  }
+  h1 {
+    padding-bottom: 1rem;
+  }
+  .femte {
+    display: none;
+  }
+  .grid {
+    margin-bottom: 5rem;
+  }
+  @media (min-width: 900px) {
+    .femte {
+      display: block;
+      margin: auto;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: 60% 40%;
+    }
+  }
+</style>

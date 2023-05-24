@@ -1,0 +1,32 @@
+---
+const { hold, varighed, prismåned, prissæson, sæson } = Astro.props;
+---
+
+<div class="kort">
+  <h2 class="hold">{hold}</h2>
+  <p>Varighed <span>{varighed}</span>.</p>
+  <p>Betal hver måned:</p>
+  <p>Pris pr måned: <span>{prismåned}</span>. <br />I alt for sæsonen: <span>{prissæson}</span>.</p>
+  <h2 class="procent">10%</h2>
+  <p>Betal det fulde beløb med det samme og få 10% på købet</p>
+  <p>I alt for sæsonen: <span>{sæson}</span>.</p>
+</div>
+
+<style>
+  .kort {
+    background-color: var(--secondary5);
+    padding: 3rem;
+  }
+  .hold {
+    color: var(--secondary4);
+  }
+  p {
+    margin-bottom: 2rem;
+  }
+  h2 {
+    margin-bottom: 1rem;
+  }
+  .procent {
+    margin-top: 5rem;
+  }
+</style>

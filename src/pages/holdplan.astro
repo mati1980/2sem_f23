@@ -27,9 +27,17 @@ const orestaden = data.filter((holdnavn) => holdnavn.sted == "Ørestaden" && hol
   <h2>Holdplan sæson 2022 / 2023</h2>
   <p>Her ser du et overblik over alle de hold vi tilbyder på henholdsvis Islands Brygge og Ørestaden Danseskole. Du finder en beskrivelse af stilarterne nederst på siden.</p>
   <p>Vælg dit favorit hold og tilmeld dig ved at klikke på holdet.</p>
-  <Button variant="mørk" size="lille">Islands Brygge</Button>
-  <Button variant="mørk" size="lille">Ørestaden</Button>
-  <Hold indhold={islandOnsdag} />
-  <Hold indhold={islandTorsdag} />
-  <Hold indhold={orestaden} />
+  <div id="islands_brygge_knap">
+    <Button variant="mørk" size="lille">Islands Brygge</Button>
+  </div>
+  <div id="orestaden_knap">
+    <Button variant="mørk" size="lille">Ørestaden</Button>
+  </div>
+  <div id="islands_brygge">
+    <Hold indhold={islandOnsdag} />
+    <Hold indhold={islandTorsdag} />
+  </div>
+  <div id="orestaden">
+    <Hold indhold={orestaden} />
+  </div>
 </MainLayout>

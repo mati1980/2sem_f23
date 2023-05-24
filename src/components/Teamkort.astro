@@ -1,0 +1,43 @@
+---
+const { variant, imgPath, navn, tekst } = Astro.props;
+---
+
+<div class="kort" data-variant={variant}>
+  <div class="placeholder">
+    <img src={imgPath} alt="danselærer" />
+  </div>
+  <div>
+    <h4 class="navn">{navn}</h4>
+    <p>{tekst}</p>
+  </div>
+</div>
+
+<style>
+  .placeholder {
+    display: block;
+    height: 500px;
+    width: 100%;
+    background-color: var(--secondary3);
+  }
+
+  .navn {
+    color: var(--secondary4);
+    padding-bottom: 1rem;
+  }
+
+  @media (min-width: 900px) {
+    .kort {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-bottom: 5rem;
+    }
+
+    [data-variant="left"] {
+      margin-left: 20%;
+    }
+    [data-variant="right"] {
+      margin-right: 20%;
+    }
+  }
+</style>
