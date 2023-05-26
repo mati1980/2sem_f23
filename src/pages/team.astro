@@ -5,8 +5,8 @@ import Teamkort from "../components/Teamkort.astro";
 import Headerimg from "../components/Headerimg.astro";
 ---
 
-<MainLayout title="Twin Dance Studio">
-  <Headerimg />
+<MainLayout title="Twin Dance Studio - Om os">
+  <Headerimg imgPath="/img/headerimg3.webp" />
   <Omos />
   <section>
     <h2>Twin team</h2>
@@ -18,6 +18,11 @@ import Headerimg from "../components/Headerimg.astro";
 
 <style>
   h2 {
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
+  }
+  @media (min-width: 900px) {
+    h2 {
+      margin-bottom: 2rem;
+    }
   }
 </style>

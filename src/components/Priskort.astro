@@ -15,18 +15,31 @@ const { hold, varighed, prismåned, prissæson, sæson } = Astro.props;
 <style>
   .kort {
     background-color: var(--secondary5);
-    padding: 3rem;
+    padding: 1rem;
+    max-width: 600px;
+    margin: auto;
   }
   .hold {
     color: var(--secondary4);
   }
   p {
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
   }
   h2 {
     margin-bottom: 1rem;
   }
   .procent {
-    margin-top: 5rem;
+    margin-top: 3rem;
+  }
+  @media (min-width: 900px) {
+    .kort {
+      padding: 3rem;
+    }
+    p {
+      margin-bottom: 2rem;
+    }
+    .procent {
+      margin-top: 5rem;
+    }
   }
 </style>

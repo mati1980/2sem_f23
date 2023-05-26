@@ -1,7 +1,7 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
-import Hold from "../components/Hold.astro";
-
+import Holdliste from "../components/Holdliste.astro";
+import Headerimg from "../components/Headerimg.astro";
 import Button from "../components/Button.astro";
 
 const url = "https://tfziumiybrtkqeivmchz.supabase.co/rest/v1/hold";
@@ -18,26 +18,102 @@ const data = await response.json();
 //console.log(data);
 
 //const islandMandag = data.filter((holdnavn) => holdnavn.sted);
-const islandOnsdag = data.filter((holdnavn) => holdnavn.sted == "Islands brygge" && holdnavn.dag == "Onsdag");
-const islandTorsdag = data.filter((holdnavn) => holdnavn.sted == "Islands brygge" && holdnavn.dag == "Torsdag");
-const orestaden = data.filter((holdnavn) => holdnavn.sted == "Ørestaden" && holdnavn.dag == "Mandag");
+const onsdag = data.filter((holdnavn) => holdnavn.sted == "Islands brygge" && holdnavn.dag == "Onsdag");
+const torsdag = data.filter((holdnavn) => holdnavn.sted == "Islands brygge" && holdnavn.dag == "Torsdag");
+const mandag = data.filter((holdnavn) => holdnavn.sted == "Ørestaden" && holdnavn.dag == "Mandag");
 ---
 
-<MainLayout title="Twin Dance Studio">
-  <h2>Holdplan sæson 2022 / 2023</h2>
-  <p>Her ser du et overblik over alle de hold vi tilbyder på henholdsvis Islands Brygge og Ørestaden Danseskole. Du finder en beskrivelse af stilarterne nederst på siden.</p>
-  <p>Vælg dit favorit hold og tilmeld dig ved at klikke på holdet.</p>
-  <div id="islands_brygge_knap">
-    <Button variant="mørk" size="lille">Islands Brygge</Button>
+<MainLayout title="Twin Dance Studio - Holdplan" meta="">
+  <Headerimg imgPath="/img/headerimg1.webp" />
+  <section class="holdet">
+    <h1>Holdplan sæson 2022 / 2023</h1>
+    <p>Her ser du et overblik over alle de hold vi tilbyder på henholdsvis Islands Brygge og Ørestaden Danseskole. Du finder en beskrivelse af stilarterne nederst på siden.</p>
+    <p>Vælg dit favorit hold og tilmeld dig ved at klikke på holdet.</p>
+  </section>
+  <div class="knapper">
+    <div id="islands_brygge_knap" class="islands_brygge_knap">
+      <Button variant="lys" size="lille">Islands Brygge</Button>
+    </div>
+    <div id="orestaden_knap" class="orestaden_knap">
+      <Button variant="lys" size="lille">Ørestaden</Button>
+    </div>
   </div>
-  <div id="orestaden_knap">
-    <Button variant="mørk" size="lille">Ørestaden</Button>
-  </div>
-  <div id="islands_brygge">
-    <Hold indhold={islandOnsdag} />
-    <Hold indhold={islandTorsdag} />
+  <div id="islands_brygge" class="islands_brygge">
+    <div class="onsdag">
+      <Holdliste indhold={onsdag} dag="Onsdag" sted="Islands Brygge" start="24. august 2023" slut="14. juni 2024" />
+    </div>
+    <div class="torsdag">
+      <Holdliste indhold={torsdag} dag="Torsdag" sted="Islands Brygge" start="25. august 2023" slut="22. juni 2024" />
+    </div>
   </div>
   <div id="orestaden">
-    <Hold indhold={orestaden} />
+    <Holdliste indhold={mandag} dag="Mandag" sted="Ørestaden" start="22. august 2023" slut="19. juni 2024" />
   </div>
 </MainLayout>
+
+<script>
+  const orestaden = document.querySelector("#orestaden_knap");
+  const islandsbrygge = document.querySelector("#islands_brygge_knap");
+  const mandagen = document.querySelector("#orestaden");
+  const onsdagtorsdag = document.querySelector("#islands_brygge");
+
+  orestaden.addEventListener("click", visMandag);
+
+  islandsbrygge.addEventListener("click", visOnsdagtorsdag);
+
+  mandagen.classList.add("hide");
+
+  function visMandag() {
+    mandagen.classList.remove("hide");
+    onsdagtorsdag.classList.add("hide");
+  }
+
+  function visOnsdagtorsdag() {
+    onsdagtorsdag.classList.remove("hide");
+    mandagen.classList.add("hide");
+  }
+</script>
+
+<style>
+  .knapper {
+    display: grid;
+    gap: 0.5rem;
+    margin: 2rem;
+  }
+  .islands_brygge_knap,
+  .orestaden_knap {
+    margin: auto;
+  }
+  h1 {
+    color: var(--primary3);
+    padding-bottom: 1rem;
+  }
+
+  @media (min-width: 900px) {
+    .holdet {
+      max-width: 1000px;
+    }
+    .knapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    .islands_brygge_knap,
+    .orestaden_knap {
+      margin: 0;
+    }
+    .islands_brygge_knap {
+      margin-left: auto;
+    }
+  }
+  @media (min-width: 1100px) {
+    .islands_brygge {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      place-items: start center;
+    }
+  }
+  .hide {
+    display: none;
+  }
+</style>

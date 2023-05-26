@@ -15,14 +15,18 @@ const { variant, imgPath, navn, tekst } = Astro.props;
 <style>
   .placeholder {
     display: block;
-    height: 500px;
+    height: 300px;
     width: 100%;
     background-color: var(--secondary3);
+    margin-bottom: 1rem;
   }
 
   .navn {
     color: var(--secondary4);
-    padding-bottom: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  p {
+    margin-bottom: 3rem;
   }
 
   @media (min-width: 900px) {
@@ -31,6 +35,16 @@ const { variant, imgPath, navn, tekst } = Astro.props;
       grid-template-columns: 1fr 1fr;
       gap: 1rem;
       margin-bottom: 5rem;
+    }
+    .placeholder {
+      height: 500px;
+      margin-bottom: 0;
+    }
+    .navn {
+      margin-bottom: 1rem;
+    }
+    p {
+      margin-bottom: 0;
     }
 
     [data-variant="left"] {

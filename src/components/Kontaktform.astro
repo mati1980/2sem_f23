@@ -3,8 +3,10 @@ import Button from "../components/Button.astro";
 ---
 
 <div class="kontakt">
-  <h2>Kontakt</h2>
-  <p>Du er altid velkommen til at kontakte os!</p>
+  <div class="tekst">
+    <h2>Kontakt</h2>
+    <p>Du er altid velkommen til at kontakte os!</p>
+  </div>
   <form class="form">
     <div class="text">
       <label for="firstname">Fornavn</label>
@@ -33,6 +35,16 @@ import Button from "../components/Button.astro";
 </div>
 
 <style>
+  .kontakt {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+  h2 {
+    padding-bottom: 0.5rem;
+  }
+  .tekst {
+    text-align: center;
+  }
   .form {
     display: grid;
     max-width: 500px;
@@ -52,15 +64,18 @@ import Button from "../components/Button.astro";
     padding: 0.5rem;
   }
   label {
-    color: var(--secondary4);
+    color: var(--primary3);
     font-family: "niveau grotesk", sans-serif;
-    font-size: 20px;
+    font-size: 17px;
     font-weight: var(--light);
   }
   .knap {
     margin: auto;
   }
   @media (min-width: 900px) {
+    label {
+      font-size: 20px;
+    }
     .form {
       padding: 3rem;
     }

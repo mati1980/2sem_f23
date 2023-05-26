@@ -1,0 +1,59 @@
+---
+import Button from "../components/Button.astro";
+const { holdnavn, alder, undervisere, tidspunkt } = Astro.props;
+---
+
+<a href="#">
+  <article class="container">
+    <p class="hold">{holdnavn}</p>
+    <p class="alder">{alder}</p>
+    <p class="underviser">{undervisere}</p>
+    <p class="tidspunkt">{tidspunkt}</p>
+    <a class="knap" href="../praktisk">
+      <Button variant="mørk" size="lille">Tilmeld</Button>
+    </a>
+  </article>
+</a>
+
+<style>
+  .container {
+    background-color: var(--secondary5);
+    width: 100%;
+    text-align: center;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    padding: 2rem;
+  }
+  .hold {
+    font-size: 32px;
+    font-weight: var(--medium);
+  }
+  .alder {
+    font-size: 24px;
+    font-weight: var(--light);
+  }
+  .underviser {
+    font-size: 16px;
+    font-weight: var(--light);
+    color: var(--secondary4);
+    text-transform: uppercase;
+  }
+  .tidspunkt {
+    font-size: 36px;
+    font-weight: var(--light);
+    color: var(--primary3);
+  }
+  p {
+    padding-bottom: 0.5rem;
+  }
+
+  .container:hover {
+    background-color: var(--secondary2);
+  }
+  @media (min-width: 900px) {
+    .container {
+      max-width: none;
+      width: 500px;
+    }
+  }
+</style>

@@ -7,46 +7,149 @@ import Kontaktform from "../components/Kontaktform.astro";
 import Betingelser from "../components/Betingelser.astro";
 ---
 
-<MainLayout title="Twin Dance Studio">
-  <Headerimg />
+<MainLayout title="Twin Dance Studio - Praktisk">
+  <Headerimg imgPath="/img/headerimg2.webp" />
   <section>
     <h1>Praktisk</h1>
     <div class="genveje">
       <a class="knap" href="../praktisk">
-        <Button variant="mørk" size="lille">Priser</Button>
+        <Button variant="mørk" size="lille" width="200">Priser</Button>
       </a>
       <a class="knap" href="../praktisk">
-        <Button variant="mørk" size="lille">Kontakt</Button>
+        <Button variant="mørk" size="lille" width="200">Kontakt</Button>
       </a>
       <a class="knap" href="../praktisk">
-        <Button variant="mørk" size="lille">Betingelser</Button>
+        <Button variant="mørk" size="lille" width="200">Betingelser</Button>
       </a>
     </div>
+  </section>
+  <section>
     <h2>Priser for sæson 2023/2024</h2>
-    <h3>En sæson for Islands Brygge består af 38 lektioner</h3>
-    <div class="grid_1-1">
-      <Priskort hold="Mini mix 3-4 år " varighed="30 min" prismåned="205 kr" prissæson="2250 kr" sæson="2025 kr" />
-      <Priskort hold="Hold til 5+ år" varighed="45 min" prismåned="295 kr" prissæson="3250 kr" sæson="2925 kr" />
+    <div class="knapper">
+      <div id="islands_brygge_knap" class="islands_brygge_knap">
+        <Button variant="lys" size="lille">Islands Brygge</Button>
+      </div>
+      <div id="orestaden_knap" class="orestaden_knap">
+        <Button variant="lys" size="lille">Ørestaden</Button>
+      </div>
     </div>
-    <h3>En sæson for Ørestaden Danseskole består af 27 lektioner</h3>
-    <Priskort hold="Hold til 5+ år" varighed="45 min" prismåned="257 kr" prissæson="2309 kr" sæson="2078 kr" />
-    <h3>Prøvetime</h3>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    <div id="islands_brygge" class="islands_brygge">
+      <h3 class="h3">En sæson for Islands Brygge består af 38 lektioner</h3>
+      <div class="grid_1-1">
+        <Priskort hold="Mini mix 3-4 år " varighed="30 min" prismåned="205 kr" prissæson="2250 kr" sæson="2025 kr" />
+        <Priskort hold="Hold til 5+ år" varighed="45 min" prismåned="295 kr" prissæson="3250 kr" sæson="2925 kr" />
+      </div>
+    </div>
+
+    <div id="orestaden">
+      <h3 class="h3">En sæson for Ørestaden består af 27 lektioner</h3>
+      <Priskort hold="Hold til 5+ år" varighed="45 min" prismåned="257 kr" prissæson="2309 kr" sæson="2078 kr" />
+    </div>
+  </section>
+  <section>
+    <div class="prov">
+      <h3>Prøvetime</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+  </section>
+  <section>
     <Kontaktform />
+  </section>
+  <section>
     <Betingelser />
   </section>
 </MainLayout>
+<script>
+  const orestaden = document.querySelector("#orestaden_knap");
+  const islandsbrygge = document.querySelector("#islands_brygge_knap");
+  const ore = document.querySelector("#orestaden");
+  const is = document.querySelector("#islands_brygge");
+
+  orestaden.addEventListener("click", visOre);
+
+  islandsbrygge.addEventListener("click", visIs);
+
+  ore.classList.add("hide");
+
+  function visOre() {
+    ore.classList.remove("hide");
+    is.classList.add("hide");
+  }
+
+  function visIs() {
+    is.classList.remove("hide");
+    ore.classList.add("hide");
+  }
+</script>
 
 <style>
   h1 {
     color: var(--primary3);
+    padding-bottom: 1rem;
+  }
+  h3 {
+    padding-bottom: 0.5rem;
+  }
+  .h3 {
+    text-align: center;
+  }
+  section {
+    margin-bottom: 3rem;
+  }
+  .knapper {
+    display: grid;
+    gap: 0.5rem;
+    margin: 2rem;
+  }
+  .islands_brygge_knap,
+  .orestaden_knap {
+    margin: auto;
+  }
+
+  .genveje {
+    display: grid;
+    gap: 0.5rem;
+  }
+  .genveje a {
+    margin: auto;
+  }
+
+  .grid_1-1 {
+    display: grid;
+    gap: 1rem;
+  }
+
+  .hide {
+    display: none;
   }
 
   @media (min-width: 900px) {
+    .genveje {
+      display: block;
+      text-align: center;
+    }
+    .genveje a {
+      margin: 1rem;
+    }
     .grid_1-1 {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 2rem;
+    }
+    .prov {
+      max-width: 1000px;
+    }
+    .knapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    .islands_brygge_knap,
+    .orestaden_knap {
+      margin: 0;
+    }
+    .islands_brygge_knap {
+      margin-left: auto;
     }
   }
 </style>

@@ -1,0 +1,45 @@
+---
+import Button from "../components/Button.astro";
+import Holdkort from "../components/Holdkort.astro";
+const { indhold, sted, dag, start, slut } = Astro.props;
+
+console.log(indhold);
+---
+
+<section>
+  <div class="info">
+    <h4>{sted}</h4>
+    <h2>{dag}</h2>
+    <p>Sæsonstart: <span>{start}</span></p>
+    <p>Sæsonslut: <span>{slut}</span></p>
+  </div>
+  {indhold.map((hold) => <Holdkort holdnavn={hold.holdnavn} alder={hold.alder} undervisere={hold.undervisere} tidspunkt={hold.tidspunkt} sted={hold.sted} />)}
+</section>
+
+<style>
+  section {
+    display: grid;
+    place-items: center;
+  }
+  .info {
+    text-align: center;
+    background-color: var(--secondary2);
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    padding: 2rem;
+    width: 100%;
+    max-width: 500px;
+  }
+  h4 {
+    font-weight: var(--light);
+    margin-bottom: 0.5rem;
+
+    text-transform: uppercase;
+  }
+  h2 {
+    margin-bottom: 0.5rem;
+  }
+  p {
+    font-style: italic;
+  }
+</style>

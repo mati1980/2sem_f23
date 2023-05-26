@@ -1,8 +1,8 @@
 ---
-const { variant, size } = Astro.props;
+const { variant, size, width } = Astro.props;
 ---
 
-<button data-variant={variant} data-size={size}>
+<button data-variant={variant} data-size={size} data-width={width}>
   <slot />
 </button>
 
@@ -18,7 +18,8 @@ const { variant, size } = Astro.props;
     color: var(--primary1);
   }
 
-  [data-variant="lys"]:hover {
+  [data-variant="lys"]:hover,
+  [data-variant="lys"].is-active {
     background: var(--secondary1);
     color: var(--secondary5);
   }
@@ -28,7 +29,8 @@ const { variant, size } = Astro.props;
     color: var(--secondary5);
   }
 
-  [data-variant="mørk"]:hover {
+  [data-variant="mørk"]:hover,
+  [data-variant="mørk"].is-active {
     background: var(--secondary5);
     color: var(--primary1);
   }
@@ -46,6 +48,9 @@ const { variant, size } = Astro.props;
   }
 
   @media (min-width: 900px) {
+    [data-width="200"] {
+      width: 200px;
+    }
     [data-size="lille"] {
       padding: 0.8rem;
       padding-left: 2rem;
