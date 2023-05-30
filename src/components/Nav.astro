@@ -15,7 +15,7 @@ import Kurv from "../components/svg/Kurv.astro";
   <div class="nav_icons">
     <a target="_blank" href="https://www.instagram.com/twin_dance_studio/"> <Instagram /></a>
     <a target="_blank" href="https://www.facebook.com/Twindancestudio/"> <Facebook /></a>
-    <a href="#"><Kurv /></a>
+    <a class="kurv" href="#"><Kurv /></a>
   </div>
   <div class="burger">
     <span class="bar"></span>
@@ -50,6 +50,10 @@ import Kurv from "../components/svg/Kurv.astro";
   }
   .nav_menu {
     display: flex;
+  }
+
+  .kurv {
+    margin-left: 2rem;
   }
 
   /*BURGER*/
@@ -89,14 +93,15 @@ import Kurv from "../components/svg/Kurv.astro";
       top: 0;
       left: 100%;
       padding-top: 5rem;
+      gap: 2rem;
     }
     .nav_menu.active {
       top: 0;
       left: 0;
     }
+
     .nav_icons {
-      margin-left: auto;
-      padding-right: 1rem;
+      display: none;
     }
   }
 </style>

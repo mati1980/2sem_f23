@@ -4,23 +4,24 @@ import Holdliste from "../components/Holdliste.astro";
 import Headerimg from "../components/Headerimg.astro";
 import Button from "../components/Button.astro";
 
+// Opretter konstanten "url" med url'en til databasen.
 const url = "https://tfziumiybrtkqeivmchz.supabase.co/rest/v1/hold";
 
+// Opretter konstanten "options" til api key.
 const options = {
   headers: {
     apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRmeml1bWl5YnJ0a3FlaXZtY2h6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODQ3NzYzOTQsImV4cCI6MjAwMDM1MjM5NH0.C1YsVKVfEdX4uF2XrTLiHqU0V4pB-aEmurW0etJlT_o",
   },
 };
 
+// Indhenter data
 const response = await fetch(url, options);
 const data = await response.json();
 
-//console.log(data);
-
-//const islandMandag = data.filter((holdnavn) => holdnavn.sted);
-const onsdag = data.filter((holdnavn) => holdnavn.sted == "Islands brygge" && holdnavn.dag == "Onsdag");
-const torsdag = data.filter((holdnavn) => holdnavn.sted == "Islands brygge" && holdnavn.dag == "Torsdag");
-const mandag = data.filter((holdnavn) => holdnavn.sted == "Ørestaden" && holdnavn.dag == "Mandag");
+// Opretter konstanter til hver af de tre dage
+const onsdag = data.filter((holdnavn) => holdnavn.dag == "Onsdag");
+const torsdag = data.filter((holdnavn) => holdnavn.dag == "Torsdag");
+const mandag = data.filter((holdnavn) => holdnavn.dag == "Mandag");
 ---
 
 <MainLayout title="Twin Dance Studio - Holdplan" meta="">
@@ -52,24 +53,32 @@ const mandag = data.filter((holdnavn) => holdnavn.sted == "Ørestaden" && holdna
 </MainLayout>
 
 <script>
+  // Opretter konstanter for knapperne og indholdet.
   const orestaden = document.querySelector("#orestaden_knap");
   const islandsbrygge = document.querySelector("#islands_brygge_knap");
   const mandagen = document.querySelector("#orestaden");
   const onsdagtorsdag = document.querySelector("#islands_brygge");
 
-  orestaden.addEventListener("click", visMandag);
-
-  islandsbrygge.addEventListener("click", visOnsdagtorsdag);
-
+  // Tilføjer .hide på Ørestadens holdliste, så det er Islands Brygge der bliver vist til at starte med.
   mandagen.classList.add("hide");
 
+  // Tilføjer EventListener på knapperne, som lytter efter 'klik', og henter hver deres funktion.
+  orestaden.addEventListener("click", visMandag);
+  islandsbrygge.addEventListener("click", visOnsdagtorsdag);
+
+  // Funktionen visMandag bliver kaldt når man klikker på Ørestaden knappen.
   function visMandag() {
+    // Fjerner .hide fra Ørestaden holdlisten
     mandagen.classList.remove("hide");
+    // Tilføjer .hide på Islands Brygge holdlisterne
     onsdagtorsdag.classList.add("hide");
   }
 
+  // Funktionen visOnsdagtorsdag bliver kaldt når man klikker på Islands Brygge knappen.
   function visOnsdagtorsdag() {
+    // Fjerner .hide på Islands Brygge holdlisterne
     onsdagtorsdag.classList.remove("hide");
+    // Tilføjer .hide på Ørestaden holdlisterne
     mandagen.classList.add("hide");
   }
 </script>

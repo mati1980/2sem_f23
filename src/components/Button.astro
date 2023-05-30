@@ -17,20 +17,15 @@ const { variant, size, width } = Astro.props;
     background: var(--secondary2);
     color: var(--primary1);
   }
-
-  [data-variant="lys"]:hover,
-  [data-variant="lys"].is-active {
+  [data-variant="lys"]:hover {
     background: var(--secondary1);
     color: var(--secondary5);
   }
-
   [data-variant="mørk"] {
     background: var(--primary1);
     color: var(--secondary5);
   }
-
-  [data-variant="mørk"]:hover,
-  [data-variant="mørk"].is-active {
+  [data-variant="mørk"]:hover {
     background: var(--secondary5);
     color: var(--primary1);
   }

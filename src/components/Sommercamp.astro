@@ -2,30 +2,43 @@
 ---
 
 <div class="grid_1-1">
-  <div class="container_l">
-    <h2>Sommercamp</h2>
-    <p>Tilmeld dig nu på mail:</p>
+  <div class="container_r">
+    <h2>Tilmelding til vores summercamp 2023 er skudt igang!</h2>
+    <p>Skriv en mail til os, hvis du skal være med</p>
     <p>info@twindancestudio.dk</p>
   </div>
-  <div class="container_r"></div>
+  <div class="container_l">
+    <img src="../img/sommercamp.webp" alt="summercamp" />
+  </div>
 </div>
 
 <style>
-  .container_l {
-    background-color: var(--secondary5);
-    padding-left: 1.5rem;
-  }
   .container_r {
-    background-color: var(--primary2);
+    background-color: var(--secondary5);
+    padding: 1.5rem;
   }
+  h2 {
+    padding-bottom: 0.5rem;
+  }
+
   @media (min-width: 900px) {
-    .container_l {
-      padding-left: 3rem;
-    }
     .grid_1-1 {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      height: 200px;
+      height: 700px;
+      margin-bottom: 3rem;
+    }
+    img {
+    }
+    .container_r {
+      grid-column: 2;
+      grid-row: 1;
+      padding: 3rem;
+      padding-top: 250px;
+    }
+    .container_l {
+      grid-column: 1;
+      grid-row: 1;
     }
   }
 </style>
