@@ -3,6 +3,7 @@ import MainLayout from "../layouts/MainLayout.astro";
 import Holdliste from "../components/Holdliste.astro";
 import Headerimg from "../components/Headerimg.astro";
 import Button from "../components/Button.astro";
+import Slider from "../components/Slider.astro";
 
 // Opretter konstanten "url" med url'en til databasen.
 const url = "https://tfziumiybrtkqeivmchz.supabase.co/rest/v1/hold";
@@ -50,6 +51,7 @@ const mandag = data.filter((holdnavn) => holdnavn.dag == "Mandag");
   <div id="orestaden">
     <Holdliste indhold={mandag} dag="Mandag" sted="Ørestaden" start="22. august 2023" slut="19. juni 2024" />
   </div>
+  <Slider />
 </MainLayout>
 
 <script>
