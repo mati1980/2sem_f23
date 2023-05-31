@@ -12,19 +12,19 @@ import Betingelser from "../components/Betingelser.astro";
   <section>
     <h1>Praktisk</h1>
     <div class="genveje">
-      <a class="knap" href="../praktisk">
+      <a class="knap" href="#priser">
         <Button variant="mørk" size="lille" width="200">Priser</Button>
       </a>
-      <a class="knap" href="../praktisk">
+      <a class="knap" href="#kontakt">
         <Button variant="mørk" size="lille" width="200">Kontakt</Button>
       </a>
-      <a class="knap" href="../praktisk">
+      <a class="knap" href="#betingelser">
         <Button variant="mørk" size="lille" width="200">Betingelser</Button>
       </a>
     </div>
   </section>
   <section>
-    <h2>Priser for sæson 2023/2024</h2>
+    <h2 id="priser">Priser for sæson 2023/2024</h2>
     <div class="knapper">
       <div id="islands_brygge_knap" class="islands_brygge_knap">
         <Button variant="lys" size="lille">Islands Brygge</Button>
@@ -52,10 +52,10 @@ import Betingelser from "../components/Betingelser.astro";
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
     </div>
   </section>
-  <section>
+  <section id="kontakt">
     <Kontaktform />
   </section>
-  <section>
+  <section id="betingelser">
     <Betingelser />
   </section>
 </MainLayout>
