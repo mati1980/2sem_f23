@@ -5,8 +5,6 @@ import H2Sektion from "../components/H2sektion.astro";
 import Citat from "../components/Citat.astro";
 import Sommercamp from "../components/Sommercamp.astro";
 import Stilarter from "../components/Stilarter.astro";
-import Cardslider from "../components/Cardslider.astro";
-import Reviews from "../components/Reviews.astro";
 import Slider from "../components/Slider.astro";
 ---
 
@@ -15,6 +13,20 @@ import Slider from "../components/Slider.astro";
   <H2Sektion />
   <Citat />
   <Sommercamp />
-  <h1>Her skal der være en slider med stilarter</h1>
+  <section>
+    <h2>Vi underviser i flere stilarter</h2>
+  </section>
   <Slider />
 </MainLayout>
+
+<style>
+  h2 {
+    display: none;
+    margin-top: 5rem;
+  }
+  @media (min-width: 1100px) {
+    h2 {
+      display: block;
+    }
+  }
+</style>

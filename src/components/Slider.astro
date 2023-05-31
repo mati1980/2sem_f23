@@ -8,20 +8,27 @@
     <!-- Slides -->
     <div class="swiper-slide">
       <div class="card-content">
-        <h2>Mini mix</h2>
-        <p>Mini mix er for skolens yngste elever. Der danses til musik fra ramasjang/MGP og børnesange som børnene kender. På mini mix undervises der ud fra moderne pædagogisk principper. Der lægges vægt på at skabe interesse for dansen, gennem tryghed, sjov og rytme.</p>
-      </div>
-    </div>
-    <div class="swiper-slide">
-      <div class="card-content">
         <h2>Disco/showdance</h2>
         <p>Disco er en dans fyldt med tempo, hurtige bevægelser og spring. Musikken er hurtige taktfaste technorytmer. I teknikken i disco tages der udgangspunkt fra show og balletten. Alle timer starter med en grundig opvarmning og spring over gulv. Der læres koreografier hvor man danser “alene”, i grupper eller hele holdet. Hvis du er til tempo, sjov og sved på panden skal du helt sikkert komme og prøve disco af.</p>
       </div>
     </div>
     <div class="swiper-slide">
       <div class="card-content">
+        <h2>Mini mix</h2>
+        <p>Mini mix er for skolens yngste elever. Der danses til musik fra ramasjang/MGP og børnesange som børnene kender. På mini mix undervises der ud fra moderne pædagogisk principper. Der lægges vægt på at skabe interesse for dansen, gennem tryghed, sjov og rytme.</p>
+      </div>
+    </div>
+
+    <div class="swiper-slide">
+      <div class="card-content">
         <h2>Moderne</h2>
         <p>Moderne tager udgangspunkt i showdansen og balletten. Der arbejdes med teknik, musikalitet, smidighed og performance.Timerne starter altid med en grundig opvarmning, efterfulgt af teknik, smidighed og spring over gulv. Dette for, at styrke kroppen og teknikken.På disse hold danses der passioneret til musikken og indlevelse er en vigtig faktor.</p>
+      </div>
+    </div>
+    <div class="swiper-slide">
+      <div class="card-content">
+        <h2>Hip Hop</h2>
+        <p>Hiphop er en subkultur, der havde sin opstart i 1970-ernes New York blandt den afroamerikanske befolkning. Med ordet hiphop tænkes ofte på rapmusik, men for hiphopperne handler det ikke blot om musik, men om en hel hiphopkultur. Hiphopdansen blev født på gaden og derefter bragt ind på dansegulvet og gjort tilgængeligt, for alle der ville være med. Efterhånden er hiphop en af de hurtigst voksende danse i verden.</p>
       </div>
     </div>
     <div class="swiper-slide">
@@ -36,16 +43,7 @@
         <p>Moderne tager udgangspunkt i showdansen og balletten. Der arbejdes med teknik, musikalitet, smidighed og performance.Timerne starter altid med en grundig opvarmning, efterfulgt af teknik, smidighed og spring over gulv. Dette for, at styrke kroppen og teknikken.På disse hold danses der passioneret til musikken og indlevelse er en vigtig faktor.</p>
       </div>
     </div>
-    <div class="swiper-slide">
-      <div class="card-content">
-        <h2>Moderne</h2>
-        <p>Moderne tager udgangspunkt i showdansen og balletten. Der arbejdes med teknik, musikalitet, smidighed og performance.Timerne starter altid med en grundig opvarmning, efterfulgt af teknik, smidighed og spring over gulv. Dette for, at styrke kroppen og teknikken.På disse hold danses der passioneret til musikken og indlevelse er en vigtig faktor.</p>
-      </div>
-    </div>
-    ...
   </div>
-  <!-- If we need pagination -->
-  <div class="swiper-pagination"></div>
 
   <!-- If we need navigation buttons -->
   <div class="swiper-button-prev"></div>
@@ -60,13 +58,19 @@
     direction: "horizontal",
     loop: true,
     slidesPerView: 3,
-    spaceBetween: 30,
+    spaceBetween: 50,
     slidesPerGroup: 3,
+    //if ($(window).width() < 1000) {
+    //  slidesPerView: 2,
+    //spaceBetween: 40,
+    //slidesPerGroup: 2,
+    //}
+    //else if ($(window).width() < 700) {
+    //slidesPerView: 1,
+    // spaceBetween: 30,
+    //slidesPerGroup: 1,
 
-    // If we need pagination
-    pagination: {
-      el: ".swiper-pagination",
-    },
+    //}
 
     // Navigation arrows
     navigation: {
@@ -78,12 +82,35 @@
 
 <style>
   .swiper {
-    width: 1200px;
-    height: 400px;
+    display: none;
   }
-  .swiper-pagination,
+
   .swiper-button-prev,
   .swiper-button-next {
-    color: red;
+    color: var(--primary3);
+  }
+  .swiper-button-prev {
+    position: relative;
+    left: 45%;
+    top: 22px;
+  }
+  .swiper-button-next {
+    position: relative;
+    left: 55%;
+  }
+  .swiper-slide {
+    width: 100%;
+  }
+  h2 {
+    color: var(--primary3);
+    margin-bottom: 1rem;
+  }
+  @media (min-width: 1100px) {
+    .swiper {
+      display: block;
+      margin: 3rem;
+      height: 100%;
+      margin-bottom: 7rem;
+    }
   }
 </style>

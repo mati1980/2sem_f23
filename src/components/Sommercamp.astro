@@ -25,8 +25,7 @@
     .grid_1-1 {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      height: 700px;
-      margin-bottom: 3rem;
+      height: 50%;
     }
     img {
     }
@@ -34,11 +33,16 @@
       grid-column: 2;
       grid-row: 1;
       padding: 3rem;
-      padding-top: 250px;
+      padding-top: 30%;
     }
     .container_l {
       grid-column: 1;
       grid-row: 1;
+    }
+  }
+  @media (min-width: 1100px) {
+    .grid_1-1 {
+      margin-bottom: 3rem;
     }
   }
 </style>
