@@ -95,7 +95,7 @@ button {
 
 .citat {
   font-size: 38px;
-  font-weight: var(--light);
+  font-weight: var(--regular);
   font-style: italic;
   color: var(--secondary3);
 }
