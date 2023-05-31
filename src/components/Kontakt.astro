@@ -5,7 +5,7 @@ import Button from "../components/Button.astro";
 <div class="kontakt">
   <div class="fyld">
     <h2>Har du spørgsmål?</h2>
-    <h1>Er du altid velkommen til at kontakte os.</h1>
+    <h2 class="h2">Er du altid velkommen til at kontakte os.</h2>
     <a class="knap" href="../praktisk">
       <Button variant="mørk" size="stor">Kontakt os</Button>
     </a>
@@ -31,9 +31,11 @@ import Button from "../components/Button.astro";
     color: var(--secondary2);
     padding-bottom: 2rem;
   }
-  h1 {
+  .h2 {
     color: var(--secondary5);
+    font-size: 40px;
   }
+
   @media (min-width: 600px) {
     .kontakt {
       background-image: url("/img/gradient.webp");
@@ -44,6 +46,9 @@ import Button from "../components/Button.astro";
   @media (min-width: 900px) {
     .kontakt {
       height: 700px;
+    }
+    .h2 {
+      font-size: 64px;
     }
     .knap {
       padding-top: 4rem;
