@@ -5,6 +5,7 @@ import Button from "../components/Button.astro";
 
 <span class="video_placeholder">
   <video id="background_video" src="../video.webm" autoplay muted loop></video>
+  <img id="background_img" src="/img/mobil_forside_img.webp" alt="danseundervisning" />
   <div class="video_text">
     <div class="fyld">
       <img src="/img/5element.webp" alt="twin dance studio" />
@@ -20,12 +21,15 @@ import Button from "../components/Button.astro";
 
 <style>
   /* Video */
-  #background_video {
+  #background_img {
     grid-area: 1/1;
     height: 400px;
     width: 100%;
     object-fit: cover;
     z-index: -1;
+  }
+  #background_video {
+    display: none;
   }
   .video_text {
     grid-area: 1/1;
@@ -67,6 +71,17 @@ import Button from "../components/Button.astro";
   @media (min-width: 900px) {
     .fyld {
       padding: 3rem;
+    }
+    #background_video {
+      display: block;
+      grid-area: 1/1;
+      height: 600px;
+      width: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+    #background_img {
+      display: none;
     }
   }
 
